@@ -1,0 +1,17 @@
+{
+  "name": "gocharge-backend",
+  "version": "1.0.0",
+  "description": "an EV charging station finder application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "run": "nodemon app.js"
+  },
+  "author": "yogesh yaduvanshi",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.8.2"
+  }
+}

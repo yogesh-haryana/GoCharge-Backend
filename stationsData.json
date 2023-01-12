@@ -1,0 +1,121 @@
+[
+    {
+        "location": {
+            "lat": 28.570955,
+            "lang": 77.236101
+        },
+        "stationName": "Tata Energy",
+        "address": "Lajpat Nagar Block C, New Delhi",
+        "ratesPerHour": 145,
+        "connectorTypes": [
+            "5-pins"
+        ]
+    },
+    {
+        "location": {
+            "lat": 28.583753,
+            "lang": 77.312045
+        },
+        "stationName": "Adani Power Limited",
+        "address": "Noida Sector 15, Gautam Buddh Nagar",
+        "ratesPerHour": 145,
+        "connectorTypes": [
+            "7-pins",
+            "12-pins"
+        ]
+    },
+    {
+        "location": {
+            "lat": 28.597661,
+            "lang": 77.293117
+        },
+        "stationName": "HP EV Station",
+        "address": "mayur vihar extension, delhi",
+        "ratesPerHour": 145,
+        "connectorTypes": [
+            "5-pins",
+            "7-pins",
+            "12-pins"
+        ]
+        },
+    {
+        "location": {
+            "lat": 28.474698,
+            "lang": 77.503331
+        },
+        "stationName": "Samsung green Energy Ltd",
+        "address": "Knowledge Park, Greater Noida",
+        "ratesPerHour": 162,
+        "connectorTypes": [
+            "5-pins",
+            "7-pins"
+        ]
+    },
+    {
+        "location": {
+            "lat": 28.493068,
+            "lang": 77.302672
+        },
+        "stationName": "Vivanta EV Charging Point",
+        "address": "Mohan Co-operative Estate, Badarpur, New delhi",
+        "ratesPerHour": 142,
+        "connectorTypes": [
+            "5-pins",
+            "12-pins"
+        ]
+    },
+    {
+        "location": {
+            "lat": 28.5431,
+            "lang": 77.206159
+        },
+        "stationName": "Bharat Group of Industries",
+        "address": "Street Number 1, Block 1, Sarvapriya Vihar, New Delhi",
+        "ratesPerHour": 132,
+        "connectorTypes": [
+            "7-pins",
+            "12-pins"
+        ]
+    },
+    {
+        "location": {
+            "lat": 28.454626,
+            "lang": 77.045514
+        },
+        "stationName": "Diamond solar Power Pvt. Ltd.",
+        "address": "Sector - 31, Gurugram, Haryana",
+        "ratesPerHour": 157,
+        "connectorTypes": [
+            "5-pins",
+            "7-pins",
+            "12-pins"
+        ]
+    },
+    {
+        "location": {
+            "lat": 28.547902,
+            "lang": 77.121311
+        },
+        "stationName": "Jindal Powers Plant",
+        "address": "IGI Rd, Aerocity, New Delhi",
+        "ratesPerHour": 190,
+        "connectorTypes": [
+            "5-pins",
+            "7-pins",
+            "12-pins"
+        ]
+    },
+    {
+        "location": {
+            "lat": 28.634477,
+            "lang": 77.221036
+        },
+        "stationName": "DTC Charging Point",
+        "address": "5, Radial Rd 5, Block C, Connaught Place, New Delhi",
+        "ratesPerHour": 193,
+        "connectorTypes": [
+            "7-pins",
+            "12-pins"
+        ]
+    }
+]
