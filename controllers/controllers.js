@@ -1,4 +1,9 @@
-const {evStations, searchHistory} = require("../model");
+const { evStations, searchHistory } = require("../model");
+
+const getSearchHistory = async (_, resp) => {
+    const data = await searchHistory.find({});
+    resp.status(200).json(data);
+}
 
 const getAllStataionsData = async (_, resp) => {
     const data = await evStations.find({});
@@ -18,18 +23,20 @@ const getFilteredStationsData = async (req, resp) => {
 }
 
 const postAllStations = async (req, resp) => {
-        let data = new evStations(req.body);
-        await data.save();
-        resp.send(data);
+    let data = new evStations(req.body);
+    await data.save();
+    resp.send(data);
 }
 
 const postSearchQuery = async (req, resp) => {
-    // let data = {searchQuery: req.params.inputValue }
-    let data = new searchHistory({ searchQuery: req.params.inputValue });
-    await data.save();
-    resp.send(data);
-    console.log("data posted");
-
+    const query = req.body.searchQuery;
+    const allConnectorTypes = ["5-pins", "7-pins", "12-pins"];
+    if (allConnectorTypes.includes(query)) {
+        let data = new searchHistory({ searchQuery: query });
+        await data.save();
+        resp.send(data);
+    }
 };
 
-module.exports = { getAllStataionsData, getFilteredStationsData, postAllStations, postSearchQuery }
+
+module.exports = { getAllStataionsData, getFilteredStationsData, postAllStations, postSearchQuery, getSearchHistory }
