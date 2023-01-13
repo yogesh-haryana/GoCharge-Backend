@@ -1,4 +1,4 @@
-const evStations = require("../model");
+const {evStations, searchHistory} = require("../model");
 
 const getAllStataionsData = async (_, resp) => {
     const data = await evStations.find({});
@@ -23,4 +23,13 @@ const postAllStations = async (req, resp) => {
         resp.send(data);
 }
 
-module.exports = { getAllStataionsData, getFilteredStationsData, postAllStations }
+const postSearchQuery = async (req, resp) => {
+    // let data = {searchQuery: req.params.inputValue }
+    let data = new searchHistory({ searchQuery: req.params.inputValue });
+    await data.save();
+    resp.send(data);
+    console.log("data posted");
+
+};
+
+module.exports = { getAllStataionsData, getFilteredStationsData, postAllStations, postSearchQuery }

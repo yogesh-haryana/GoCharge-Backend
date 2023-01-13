@@ -29,5 +29,26 @@ const stationsSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("evstations", stationsSchema);
+const dateNow = new Date();
+const year = dateNow.getFullYear();
+const month = Number(dateNow.getMonth()+1);
+const day = dateNow.getDate();
+const finalDate = `${day}-${month}-${year}`;
+
+const historySchema = mongoose.Schema({
+    searchQuery: {
+        type: String,
+        required: true,
+    },
+    atDate: {
+        type: String,
+        default: finalDate,
+    }
+})
+
+const evStations = mongoose.model("evstations", stationsSchema);
+const searchHistory = mongoose.model("history", historySchema);
+
+module.exports = {evStations, searchHistory}
+
 
