@@ -1,7 +1,11 @@
 const { evStations, searchHistory } = require("../model");
 
-const getSearchHistory = async (_, resp) => {
-    const data = await searchHistory.find({});
+const getSearchHistory = async (req, resp) => {
+    const page = Number(req.params.page);
+    console.log(page);
+    const limit = 5;
+    const skip = (page - 1) * limit;
+    const data = await searchHistory.find({}).limit(limit).skip(skip);
     resp.status(200).json(data);
 }
 
@@ -29,7 +33,7 @@ const postAllStations = async (req, resp) => {
 }
 
 const postSearchQuery = async (req, resp) => {
-    const query = req.body.searchQuery;
+    const query = req.body.searchQuery.trim();
     const allConnectorTypes = ["5-pins", "7-pins", "12-pins"];
     if (allConnectorTypes.includes(query)) {
         let data = new searchHistory({ searchQuery: query });
