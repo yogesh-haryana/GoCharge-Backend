@@ -1,12 +1,27 @@
 const { evStations, searchHistory } = require("../model");
 
 const getSearchHistory = async (req, resp) => {
-    const page = Number(req.params.page);
+    const page = Number(req.query.page);
+    const entries = Number(req.query.entries);
     console.log(page);
-    const limit = 5;
+    const limit = entries || 5;
     const skip = (page - 1) * limit;
-    const data = await searchHistory.find({}).limit(limit).skip(skip);
-    resp.status(200).json(data);
+    const { searchQuery, atDate } = req.query;
+
+    if (searchQuery && atDate) {
+        let data = await searchHistory.find({ searchQuery: searchQuery, atDate: atDate }).limit(limit).skip(skip);
+        resp.status(200).json(data);
+    }
+    else if (searchQuery) {
+        let data = await searchHistory.find({ searchQuery: searchQuery }).limit(limit).skip(skip);
+        resp.status(200).json(data);
+    } else if (atDate) {
+        let data = await searchHistory.find({ atDate: atDate }).limit(limit).skip(skip);
+        resp.status(200).json(data);
+    } else {
+        let data = await searchHistory.find({}).limit(limit).skip(skip);
+        resp.status(200).json(data);
+    }
 }
 
 const getAllStataionsData = async (_, resp) => {
