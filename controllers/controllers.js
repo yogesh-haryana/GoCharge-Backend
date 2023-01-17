@@ -57,5 +57,4 @@ const postSearchQuery = async (req, resp) => {
     }
 };
 
-
 module.exports = { getAllStataionsData, getFilteredStationsData, postAllStations, postSearchQuery, getSearchHistory }

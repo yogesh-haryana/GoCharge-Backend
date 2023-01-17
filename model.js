@@ -31,7 +31,8 @@ const stationsSchema = new mongoose.Schema({
 
 const dateNow = new Date();
 const year = dateNow.getFullYear();
-const month = Number(dateNow.getMonth()+1);
+let month = Number(dateNow.getMonth()+1);
+month = String(month).padStart(2, "0");
 const day = dateNow.getDate();
 const finalDate = `${day}-${month}-${year}`;
 
